@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <profiles>
+        <profile>
+            <id>development</id>
+            <properties>
+                <app.name>devops-pipeline-demo</app.name>
+                <app.version>1.0.0</app.version>
+                <environment>development</environment>
+                <database.url>localhost:5432</database.url>
+                <log.level>debug</log.level>
+            </properties>
+        </profile>
+        <profile>
+            <id>staging</id>
+            <properties>
+                <app.name>devops-pipeline-demo</app.name>
+                <app.version>1.0.0</app.version>
+                <environment>staging</environment>
+                <database.url>staging-db.amazonaws.com</database.url>
+                <log.level>info</log.level>
+            </properties>
+        </profile>
+        <profile>
+            <id>production</id>
+            <properties>
+                <app.name>devops-pipeline-demo</app.name>
+                <app.version>1.0.0</app.version>
+                <environment>production</environment>
+                <database.url>prod-db.amazonaws.com</database.url>
+                <log.level>warn</log.level>
+            </properties>
+        </profile>
+    </profiles>
+</settings>
