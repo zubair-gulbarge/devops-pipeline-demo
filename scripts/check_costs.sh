@@ -5,9 +5,9 @@ echo "=== AWS Free Tier Usage Check ==="
 echo "Date: $(date)"
 echo ""
 
-# Get current month start and end dates
-CURRENT_MONTH_START=$(date -d "$(date +%Y-%m-01)" +%Y-%m-%d)
-NEXT_MONTH_START=$(date -d "$(date +%Y-%m-01) +1 month" +%Y-%m-%d)
+# Get current month start and end dates (macOS compatible)
+CURRENT_MONTH_START=$(date +%Y-%m-01)
+NEXT_MONTH_START=$(date -v+1m -j -f "%Y-%m-%d" "$CURRENT_MONTH_START" "+%Y-%m-%d" 2>/dev/null || date -j -v+1m -f "%Y-%m-%d" "$CURRENT_MONTH_START" "+%Y-%m-%d" 2>/dev/null || echo "$(date +%Y-%m-01)")
 
 echo "Checking usage for period: $CURRENT_MONTH_START to $NEXT_MONTH_START"
 echo ""
